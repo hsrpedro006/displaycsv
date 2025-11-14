@@ -5,124 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workflow360 - Análise de Dados</title>
 
-    <!-- CSS EMBUTIDO -->
+    <!-- NOVA FONTE -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         /* ======== RESET ======== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         body {
-            background: #f4f6f8;
-            color: #333;
-            line-height: 1.5;
+            background: #fdfdf8;
+            color: #1b1b1b;
             padding-bottom: 50px;
         }
 
-        /* ======== NAVBAR ======== */
+        /* ======== NAVBAR (AMARELO) ======== */
         .navbar {
             width: 100%;
-            background: #0d6efd;
-            color: white;
-            padding: 15px 20px;
+            background: #F2C641; /* amarelo ouro */
+            color: #063F1E; /* verde escuro */
+            padding: 18px 25px;
             display: flex;
             align-items: center;
+            box-shadow: 0 4px 10px #00000020;
         }
 
         .navbar-brand {
-            font-size: 22px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         /* ======== CONTAINER ======== */
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 35px auto;
         }
 
-        /* ======== ALERT BOX ======== */
+        /* ======== ALERTA (VERDE) ======== */
         .alert {
-            background: #d0e7ff;
-            border-left: 5px solid #0d6efd;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 25px;
+            background: #C9F7D1; 
+            border-left: 8px solid #2E8B57;
+            padding: 22px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px #00000015;
         }
 
         .alert h4 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e5631;
         }
 
         /* ======== CARD ======== */
         .card {
             background: white;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000020;
+            margin-bottom: 35px;
             overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 18px #00000030;
         }
 
         .card-header {
-            background: #0d6efd;
+            background: #2E8B57; /* verde */
             color: white;
-            padding: 12px 18px;
+            padding: 15px 20px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: .5px;
         }
 
         .card-body {
-            padding: 18px;
+            padding: 22px;
         }
 
-        /* ======== TABLE ======== */
+        /* ======== TABELA ======== */
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
+            overflow: hidden;
         }
 
         table thead tr {
-            background: #0d6efd;
-            color: white;
+            background: #F2C641; /* amarelo */
+            color: #063F1E;
         }
 
         table th, table td {
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ddd;
         }
 
         table tbody tr:nth-child(even) {
-            background: #f7f9fa;
+            background: #f6fbea;
         }
 
         .table-responsive {
             overflow-x: auto;
-            border-radius: 6px;
+            border-radius: 10px;
         }
 
         /* ======== FOOTER ======== */
         footer {
-            background: #e9ecef;
-            padding: 20px 0;
-            margin-top: 40px;
+            background: #063F1E;
+            padding: 25px 0;
+            margin-top: 50px;
+            color: #F2C641;
         }
 
         footer p {
-            color: #6c757d;
             text-align: center;
             font-size: 14px;
+            letter-spacing: .5px;
         }
 
         /* ======== RESPONSIVO ======== */
         @media (max-width: 768px) {
             .navbar-brand {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .card-header {
@@ -134,14 +148,14 @@
             }
         }
     </style>
-
 </head>
+
 <body>
 
     <!-- NAVBAR -->
     <nav class="navbar">
         <span class="navbar-brand">
-            ⚙️ Workflow360 — O Impacto da IA no Trabalho
+            🇧🇷 Workflow360 — Inteligência Artificial no Trabalho
         </span>
     </nav>
 
@@ -151,7 +165,7 @@
         <!-- ALERTA -->
         <div class="alert">
             <h4>📊 Análise de Dados — Workflow360</h4>
-            <p><strong>Tema:</strong> O Impacto da Inteligência Artificial nas Dinâmicas de Trabalho</p>
+            <p><strong>Tema:</strong> O Impacto da Inteligência Artificial no Futuro do Trabalho</p>
             <p><strong>Total de Registros:</strong> {{ total }}</p>
             <p><strong>Colunas:</strong> {{ colunas|length }}</p>
         </div>
@@ -166,21 +180,19 @@
             </div>
         </div>
 
-        <!-- OBJETIVO DO PROJETO -->
+        <!-- OBJETIVO -->
         <div class="card">
             <div class="card-body">
-                <h5>🎯 Objetivo do Projeto</h5>
+                <h5 style="font-size: 20px; margin-bottom: 10px; color:#2E8B57;">
+                    🎯 Objetivo do Projeto
+                </h5>
                 <p>
-                    O Workflow360 tem como objetivo analisar como a Inteligência Artificial está
-                    transformando o mercado de trabalho global. Este WebApp exibe dados que
-                    auxiliam na compreensão de tendências, mudanças nas profissões, automação
-                    e novas oportunidades que surgem com o avanço tecnológico.
+                    O Workflow360 analisa como a Inteligência Artificial está remodelando profissões,
+                    impulsionando automação e criando novas oportunidades no mercado global.
                 </p>
-
-                <p>
-                    Esta análise serve como base para soluções inteligentes que ajudem empresas
-                    e profissionais a entender impactos, adaptar processos e desenvolver estratégias
-                    eficientes para o futuro do trabalho.
+                <p style="margin-top:10px;">
+                    A plataforma fornece dados para orientar empresas e profissionais na adaptação ao futuro —
+                    ajudando na tomada de decisões estratégicas e na compreensão das tendências tecnológicas.
                 </p>
             </div>
         </div>
